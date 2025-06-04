@@ -1,11 +1,14 @@
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+    FormsModule,
+    CommonModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -92,6 +95,40 @@ export class AppComponent {
   }
 
   enviarMensagemWhatsApp() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const telefoneRegex = /^[0-9]+$/;
+
+
+    if (this.nome.trim().length < 3) {
+      alert('Por favor, insira um nome com pelo menos 3 caracteres.');
+      return;
+    }
+
+    if (!emailRegex.test(this.email)) {
+      alert('Por favor, insira um email válido.');
+      return;
+    }
+
+    if (!telefoneRegex.test(this.telefone)) {
+      alert('Telefone deve conter apenas números, parênteses, hífens, espaços e +.');
+      return;
+    }
+
+    if (this.telefone.trim().length < 8 || this.telefone.trim().length > 15) {
+      alert('Telefone deve ter entre 8 e 15 caracteres.');
+      return;
+    }
+
+    if (this.assunto.trim().length < 3) {
+      alert('Por favor, insira um assunto com pelo menos 3 caracteres.');
+      return;
+    }
+
+    if (this.mensagem.trim().length < 10) {
+      alert('A mensagem deve ter pelo menos 10 caracteres.');
+      return;
+    }
+
     const textoMensagem =
       `*Nome:* ${this.nome}%0A` +
       `*Email:* ${this.email}%0A` +

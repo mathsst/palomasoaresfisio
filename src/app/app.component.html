@@ -1,4 +1,4 @@
-<header class="fixed-top py-1 border-bottom glass-effect shadow-sm">
+<header class="container-lg fixed-top border-bottom glass-effect shadow">
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -20,29 +20,34 @@
         <div class="offcanvas-body" id="main-nav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3 anchor">
-              <a href="#" class="nav-link fs-5 text-verde-escuro">
-                <i class="bi bi-house me-2"></i>Início
+              <a href="#" class="nav-link fs-5 text-verde-escuro d-flex align-items-center">
+                <i class="bi bi-house me-2"></i>
+                <span class="menu-text">Início</span>
               </a>
             </li>
             <li class="nav-item mx-3 anchor">
-              <a href="#especialidades" class="nav-link fs-5 text-verde-escuro">
-                <i class="bi bi-award me-2"></i>Especialidades
+              <a href="#especialidades" class="nav-link fs-5 text-verde-escuro d-flex align-items-center">
+                <i class="bi bi-award me-2"></i>
+                <span class="menu-text">Especialidades</span>
               </a>
             </li>
             <li class="nav-item mx-3 anchor">
-              <a href="#sobre" class="nav-link fs-5 text-verde-escuro">
-                <i class="bi bi-person me-2"></i>Sobre
+              <a href="#sobre" class="nav-link fs-5 text-verde-escuro d-flex align-items-center">
+                <i class="bi bi-person me-2"></i>
+                <span class="menu-text">Sobre</span>
               </a>
             </li>
             <li class="nav-item mx-3 anchor">
-              <a href="#contato" class="nav-link fs-5 text-verde-escuro">
-                <i class="bi bi-telephone me-2"></i>Contato
+              <a href="#contato" class="nav-link fs-5 text-verde-escuro d-flex align-items-center">
+                <i class="bi bi-telephone me-2"></i>
+                <span class="menu-text">Contato</span>
               </a>
             </li>
             <li class="d-flex align-items-center mx-3 mt-2 mt-lg-0">
               <a href="https://api.whatsapp.com/send?phone=5579999225553" target="_blank" rel="noopener noreferrer"
-                class="btn btn-rosa px-3 py-2 d-flex align-items-center">
-                <i class="bi bi-whatsapp me-2"></i>Whatsapp
+                class="btn btn-rosa px-3 py-2 d-flex align-items-center btn-whatsapp-only">
+                <i class="bi bi-whatsapp"></i>
+                <span class="menu-text ms-2">Whatsapp</span>
               </a>
             </li>
           </ul>
@@ -52,7 +57,7 @@
   </nav>
 </header>
 
-<div class="p-4 mb-4 pt-5 text-body-emphasis bg-gradient-verde" id="destaque">
+<section class="p-4 text-body-emphasis vh-100" id="destaque">
   <div class="container px-3">
     <div class="row">
       <div class="col-md-6 d-flex flex-column justify-content-center mb-4 mb-lg-0">
@@ -76,7 +81,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <div class="container">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5 text-center">
@@ -101,7 +106,7 @@
   </div>
 </div>
 
-<section class="bg-light py-5 px-3" id="especialidades">
+<section class="py-5 px-3 vh-100" id="especialidades">
   <div class="container">
     <div class="text-center">
       <h2 class="fs-2 text-verde-escuro fw-semibold mb-3">
@@ -115,7 +120,7 @@
       <div class="col-lg-8">
         <div class="row g-4">
           <div class="col-md-6">
-            <div class="card border-0 h-100 shadow hover-card bg-gradient-rosa-claro">
+            <div class="card border-0 h-100 shadow hover-card bg-light">
               <div class="card-body p-4">
                 <div
                   class="d-flex align-items-center justify-content-center bg-rosa-soft rounded-circle mb-4 icone-especialidade">
@@ -131,7 +136,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card border-0 h-100 shadow hover-card bg-gradient-rosa-claro">
+            <div class="card border-0 h-100 shadow hover-card bg-light">
               <div class="card-body p-4">
                 <div
                   class="d-flex align-items-center justify-content-center bg-rosa-soft rounded-circle mb-4 icone-especialidade">
@@ -147,7 +152,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card border-0 h-100 shadow hover-card bg-gradient-rosa-claro">
+            <div class="card border-0 h-100 shadow hover-card bg-light">
               <div class="card-body p-4">
                 <div
                   class="d-flex align-items-center justify-content-center bg-rosa-soft rounded-circle mb-4 icone-especialidade">
@@ -162,7 +167,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card border-0 h-100 shadow hover-card  bg-gradient-rosa-claro">
+            <div class="card border-0 h-100 shadow hover-card bg-light">
               <div class="card-body p-4">
                 <div
                   class="d-flex align-items-center justify-content-center bg-rosa-soft rounded-circle mb-4 icone-especialidade">
@@ -186,7 +191,7 @@
   </div>
 </section>
 
-<section id="sobre" class="py-5 px-3 bg-verde-claro">
+<section id="sobre" class="py-5 px-3 vh-100">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-5 text-center reveal">
@@ -225,7 +230,7 @@
   </div>
 </section>
 
-<section id="contato" class="py-5 px-3 py-md-7 bg-light">
+<section id="contato" class="py-5 px-3 py-md-7 text-verde-escuro vh-100">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="display-6 fw-bold mb-3">Entre em Contato</h2>
@@ -294,38 +299,69 @@
       </div>
 
       <div class="col-lg-6">
-        <div class="card border-0 shadow-sm">
+        <div class="card border-0 shadow-sm text-verde-escuro">
           <div class="card-body p-4">
-            <h3 class="fs-4 fw-bold mb-4">Envie uma Mensagem</h3>
-            <form (ngSubmit)="enviarMensagemWhatsApp()" #formContato="ngForm">
+            <h3 class="fs-4 fw-bold mb-4">Envie uma mensagem</h3>
+            <form (ngSubmit)="enviarMensagemWhatsApp()" #formContato="ngForm" novalidate>
               <div class="row g-3 mb-3">
                 <div class="col-md-6">
                   <label for="nome" class="form-label">Nome</label>
                   <input type="text" class="form-control" id="nome" [(ngModel)]="nome" name="nome" required
-                    placeholder="Seu nome completo" />
+                    minlength="3" placeholder="Seu nome completo" #nomeInput="ngModel" />
+                  <div *ngIf="nomeInput.invalid && (nomeInput.touched || nomeInput.dirty || formContato.submitted)"
+                    class="text-danger">
+                    <small *ngIf="nomeInput.errors?.['required']">Nome é obrigatório.</small>
+                    <small *ngIf="nomeInput.errors?.['minlength']">Nome deve ter ao menos 3 caracteres.</small>
+                  </div>
                 </div>
                 <div class="col-md-6">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required
-                    placeholder="Seu email" />
+                  <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required email
+                    placeholder="Seu email" #emailInput="ngModel" />
+                  <div *ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty || formContato.submitted)"
+                    class="text-danger">
+                    <small *ngIf="emailInput.errors?.['required']">Email é obrigatório.</small>
+                    <small *ngIf="emailInput.errors?.['email']">Digite um email válido.</small>
+                  </div>
                 </div>
               </div>
               <div class="mb-3">
                 <label for="telefone" class="form-label">Telefone</label>
                 <input type="tel" class="form-control" id="telefone" [(ngModel)]="telefone" name="telefone" required
-                  placeholder="Seu telefone" />
+                  pattern="^[0-9 ()+-]+$" minlength="8" maxlength="15" placeholder="Seu telefone" #telInput="ngModel" />
+                <div *ngIf="telInput.invalid && (telInput.touched || telInput.dirty || formContato.submitted)"
+                  class="text-danger">
+                  <small *ngIf="telInput.errors?.['required']">Telefone é obrigatório.</small>
+                  <small *ngIf="telInput.errors?.['pattern']">Telefone deve conter apenas números.</small>
+                  <small *ngIf="telInput.errors?.['minlength']">Telefone deve ter ao menos 8 caracteres.</small>
+                  <small *ngIf="telInput.errors?.['maxlength']">Telefone deve ter no máximo 15 caracteres.</small>
+                </div>
               </div>
               <div class="mb-3">
                 <label for="assunto" class="form-label">Assunto</label>
                 <input type="text" class="form-control" id="assunto" [(ngModel)]="assunto" name="assunto" required
-                  placeholder="Assunto da mensagem" />
+                  minlength="3" placeholder="Assunto da mensagem" #assuntoInput="ngModel" />
+                <div
+                  *ngIf="assuntoInput.invalid && (assuntoInput.touched || assuntoInput.dirty || formContato.submitted)"
+                  class="text-danger">
+                  <small *ngIf="assuntoInput.errors?.['required']">Assunto é obrigatório.</small>
+                  <small *ngIf="assuntoInput.errors?.['minlength']">Assunto deve ter ao menos 3 caracteres.</small>
+                </div>
               </div>
               <div class="mb-4">
                 <label for="mensagem" class="form-label">Mensagem</label>
                 <textarea class="form-control" id="mensagem" [(ngModel)]="mensagem" name="mensagem" rows="4" required
-                  placeholder="Sua mensagem"></textarea>
+                  minlength="10" placeholder="Sua mensagem" #mensagemInput="ngModel"></textarea>
+                <div
+                  *ngIf="mensagemInput.invalid && (mensagemInput.touched || mensagemInput.dirty || formContato.submitted)"
+                  class="text-danger">
+                  <small *ngIf="mensagemInput.errors?.['required']">Mensagem é obrigatória.</small>
+                  <small *ngIf="mensagemInput.errors?.['minlength']">Mensagem deve ter ao menos 10 caracteres.</small>
+                </div>
               </div>
-              <button type="submit" class="btn btn-rosa w-100" [disabled]="!formContato.valid">Enviar Mensagem</button>
+              <button type="submit" class="btn btn-rosa w-100" [disabled]="!formContato.valid">
+                Enviar Mensagem
+              </button>
             </form>
           </div>
         </div>
