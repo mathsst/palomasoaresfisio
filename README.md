@@ -1,27 +1,73 @@
-# Palomasoaresfisio
+# Paloma Soares Fisioterapia
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Site institucional da fisioterapeuta **Paloma Soares**, desenvolvido com Angular para apresentar seus serviços, especialidades e formas de contato de maneira acessível, leve e moderna.
 
-## Development server
+👉 **Acesse o site:** [www.palomasoaresfisio.com.br](https://www.palomasoaresfisio.com.br)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## ✨ Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 📋 Apresentação dos serviços e especialidades
+- 🩺 Resumos explicativos com visual profissional e acolhedor
+- 📱 Design responsivo para desktop, tablet e celular
+- 💬 Formulário de contato funcional
+- ⚡ Carregamento rápido e otimizado para SEO
+- 🎥 Vídeo de fundo e efeitos visuais suaves
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📸 Capturas de Tela
 
-## Running unit tests
+### Página Inicial
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![image](https://github.com/user-attachments/assets/827129e7-18a0-4051-9937-aa14e03703e3)
 
-## Running end-to-end tests
+### Modal com vídeo de fundo
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![image](https://github.com/user-attachments/assets/5c7ab403-0aee-4247-b602-e783ea1c5151)
 
-## Further help
+### Formulário integrado com Whatsapp para contato
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+![image](https://github.com/user-attachments/assets/c6a19ac9-bc7b-4421-9292-04dceadfb1b2)
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- [Angular CLI 18](https://angular.dev)
+- HTML5 + CSS3 com [Bootstrap 5](https://getbootstrap.com/)
+- [Bootstrap Icons](https://icons.getbootstrap.com/)
+- Deploy no GitHub Pages com domínio personalizado
+
+---
+
+## 📦 Build e Deploy
+
+Este projeto é construído com:
+
+ng build --configuration production
+
+
+E publicado com:
+
+ng deploy --base-href=/palomasoaresfisio/ --no-build --dir=dist/palomasoaresfisio/browser
+
+> O arquivo `CNAME` com o domínio `www.palomasoaresfisio.com.br` garante o redirecionamento correto no GitHub Pages.
+
+---
+
+## 👤 Autor
+
+Desenvolvido por [Matheus Santana](https://www.linkedin.com/in/mathsst)
+📧 [mathsant98@gmail.com](mailto:mathsant98@gmail.com)
+
+---
+
+## Licença
+
+Este projeto é proprietário e protegido por direitos autorais.  
+O código-fonte não está autorizado para cópia, redistribuição ou modificação, mesmo parcialmente.  
+Qualquer uso não autorizado será considerado violação dos direitos autorais.
+
+© 2025 Matheus Santana. Todos os direitos reservados.
