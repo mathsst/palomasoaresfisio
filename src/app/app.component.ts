@@ -5,10 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    FormsModule,
-    CommonModule
-  ],
+  imports: [FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -22,23 +19,36 @@ export class AppComponent {
   mensagem = '';
 
   whatsappNumero = '5579999225553';
+  ano: number = new Date().getFullYear();
 
   @ViewChild('offcanvasNavbar') offcanvasNavbar!: ElementRef;
   bsOffcanvas: any;
+
   private isBrowser: boolean;
 
-  ano: number = new Date().getFullYear();
+  private cliqueFora = (event: MouseEvent) => {
+    const offcanvasEl = this.offcanvasNavbar?.nativeElement;
+    const target = event.target as HTMLElement;
 
-  private offcanvasInitialized = false;
+    if (!offcanvasEl) return;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    const isInsideOffcanvas = offcanvasEl.contains(target);
+    const isToggler = document.querySelector('.navbar-toggler')?.contains(target);
+
+    if (this.bsOffcanvas && offcanvasEl.classList.contains('show') && !isInsideOffcanvas && !isToggler) {
+      this.bsOffcanvas.hide();
+    }
+  };
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+    private elementRef: ElementRef
+  ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   async ngAfterViewInit() {
     if (!this.isBrowser) return;
 
-    // Intersection Observer para revelar elementos
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         entry.target.classList.toggle('visible', entry.isIntersecting);
@@ -61,46 +71,36 @@ export class AppComponent {
         scroll: false,
       });
 
-      let ignoreNextClickOutside = false;
-
-      // Evento para pós-fechamento do offcanvas
       offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
         const toggler = document.querySelector('.navbar-toggler') as HTMLElement;
         if (toggler) toggler.blur();
         document.body.style.overflow = '';
-        ignoreNextClickOutside = true;
-
-        // Limpa qualquer backdrop residual
         document.querySelectorAll('.offcanvas-backdrop').forEach(el => el.remove());
       });
 
-      // Fechar offcanvas ao clicar fora dele
-      document.addEventListener('mousedown', (event: MouseEvent) => {
-        const target = event.target as HTMLElement;
-        const isInsideOffcanvas = offcanvasEl.contains(target);
-        const isToggler = document.querySelector('.navbar-toggler')?.contains(target);
-        if (this.bsOffcanvas && offcanvasEl.classList.contains('show') && !isInsideOffcanvas && !isToggler) {
-          this.bsOffcanvas.hide();
-        }
-      });
+      document.addEventListener('mousedown', this.cliqueFora);
 
-      // Fechar offcanvas ao clicar em links do menu
       document.querySelectorAll('#main-nav a').forEach(link => {
-        link.addEventListener('click', (event) => {
-          (event.currentTarget as HTMLElement).blur();
+        link.addEventListener('click', () => {
+          (link as HTMLElement).blur();
           this.bsOffcanvas.hide();
         });
       });
     }
+
+    const tooltipTriggerList = this.elementRef.nativeElement.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltipTriggerList.forEach((el: HTMLElement) => {
+      new bootstrap.Tooltip(el);
+    });
   }
 
   enviarMensagemWhatsApp() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const telefoneRegex = /^[0-9]+$/;
+    const nomeRegex = /^[A-Za-zÀ-ÿ\s']+$/;
 
-
-    if (this.nome.trim().length < 3) {
-      alert('Por favor, insira um nome com pelo menos 3 caracteres.');
+    if (this.nome.trim().length < 3 || !nomeRegex.test(this.nome.trim())) {
+      alert('Por favor, insira um nome válido (somente letras, sem números).');
       return;
     }
 
@@ -110,7 +110,7 @@ export class AppComponent {
     }
 
     if (!telefoneRegex.test(this.telefone)) {
-      alert('Telefone deve conter apenas números, parênteses, hífens, espaços e +.');
+      alert('Telefone deve conter apenas números.');
       return;
     }
 
@@ -157,5 +157,11 @@ export class AppComponent {
       if (href === currentId) link.classList.add('active');
       else link.classList.remove('active');
     });
+  }
+
+  ngOnDestroy() {
+    if (this.isBrowser) {
+      document.removeEventListener('mousedown', this.cliqueFora);
+    }
   }
 }
