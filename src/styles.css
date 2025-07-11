@@ -16,12 +16,25 @@
   --cinza: #9d9d93;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  pointer-events: none;
+}
+
 html,
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   scroll-behavior: smooth;
-  background: linear-gradient(to bottom, var(--cinza-100), #ffffff) !important;
+  background-image: url('assets/img/nnnoise.svg');
+  background-repeat: repeat;
+  background-size: auto;
+  position: relative;
+  z-index: 0;
 }
 
 html {
@@ -228,8 +241,8 @@ section[id] {
 }
 
 .icone-especialidade {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
 }
 
 .icone-contato {
@@ -241,10 +254,18 @@ section[id] {
   background-color: var(--rosa-500);
 }
 
+.titulo-qualificacao {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
 @media (max-width: 480px) {
   #especialidades-img {
     max-width: 300px;
-    margin-top: 5rem;
   }
 
   #especialidades,
@@ -279,6 +300,10 @@ section[id] {
   #sobre,
   #contato {
     height: auto !important;
+  }
+
+  #especialidades-img {
+    margin-top: 5rem;
   }
 }
 
@@ -336,6 +361,7 @@ section[id] {
 
   #especialidades-img {
     max-width: 100%;
+    margin-top: 0;
   }
 }
 
@@ -351,15 +377,6 @@ section[id] {
 
   .nav-item {
     text-align: center;
-  }
-
-  .btn-whatsapp-only {
-    padding: 0 0.75rem;
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 
