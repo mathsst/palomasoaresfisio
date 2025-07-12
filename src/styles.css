@@ -255,7 +255,7 @@ section[id] {
 }
 
 .titulo-qualificacao {
-  min-height: 48px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
